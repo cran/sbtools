@@ -1,4 +1,4 @@
-665b7b4385dd143f6182b46acf2a4c80 *DESCRIPTION
+775cf384df66363c02deeeb108dc1d16 *DESCRIPTION
 f2b7417e4e84de8d729f1a205103181d *LICENSE.note
 30077bf90c544b698f33e2cf0095e285 *NAMESPACE
 fdd0826d826a738c78d9064c869dd54c *NEWS.md
@@ -45,7 +45,7 @@ cae7475a700586ca02c7075b419e200c *R/query_sb_date.R
 3ad85a99eb32157dcb35fb99e0457eaa *R/query_sb_text.R
 a2b1352116425520e21657992b6b583b *R/sb_item.R
 5b699a12327290ac893a1924e6e44bff *R/sb_ping.R
-011d1ea369d0a89e3eda0e81820ddbfd *R/sbtools-package.R
+4522111f2e6e347117e32fd33f974ac0 *R/sbtools-package.R
 b0d9683d35392e1f078adf54309d106d *R/session_age.R
 114c8fefa967cef226eb6bfa6017bd47 *R/session_age_reset.R
 9ee8954c1428c231b49512f9956eaf81 *R/session_authorized.R
@@ -56,10 +56,11 @@ e4684d75f6323a655af9522910eec790 *R/session_set.R
 9abec0ba2f81751695586c2750641098 *R/session_validate.R
 1fd826aa290be1038351f88504bff6ec *R/set_endpoint.R
 39f3d9f60ff3cf6becc239cb7c83b893 *R/user_id.R
-2a9d447c2cac5ee0024ed390caf19d23 *README.md
+ee419717cc529d8af81d6e079966cedf *README.md
 026390451f6e2079e8d2c0ee1153bbf8 *demo/00Index
 2d5056f07f92301416e56230ac4e6ca0 *demo/figure_fault_code.R
 d86348ae197adcb10c9d4bfff0e6a734 *demo/figure_map_code.R
+0d5fd5ef9ab3192bea43a6060b95c4b0 *inst/CITATION
 5fdfb35513fde6e37bdb1c0e6c193f2d *inst/examples/books.json
 9e642b9403d33adff4c052d20aa503d8 *inst/examples/data.csv
 6cf500664f96812092b0e0b8cf5d492a *inst/examples/species.json
@@ -108,7 +109,7 @@ bd44b274bf6a38868ec700e66ff5e130 *man/query_sb_text.Rd
 55b7fcef207a2bbf452509b1cfdad375 *man/sb_datatypes.Rd
 d212ecd0127454e0002208a1ff965f4d *man/sb_ping.Rd
 d06429b2b28550ee7b3d31e48f79bbc0 *man/sbitem.Rd
-68f0db92c7ceb2d68c614cc1afbbcafc *man/sbtools-package.Rd
+3abfe5977cf80b8ac5bb7a69bbd8705b *man/sbtools-package.Rd
 e847351e93e047980d3b2e37960ba17e *man/sbtools_DELETE.Rd
 abaa742be29af4d3fbd98b8e50c9697e *man/sbtools_GET.Rd
 4069ea7e0125efe7c0c131391b1abee2 *man/sbtools_POST.Rd
