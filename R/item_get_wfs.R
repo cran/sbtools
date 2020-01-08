@@ -1,6 +1,7 @@
-#' @title Download and load from SB WFS service
+#' @title Download and load from SB WFS service (Deprecated)
 #' 
 #' @template manipulate_item
+#' @param as_sf boolean, return data in sf format
 #' 
 #' @import stringr
 #' @importFrom utils unzip
@@ -9,28 +10,22 @@
 #' This function attempts to download the spatial layer data attached to the
 #' requested SB item. SB exposes discrete spatial objects (points, polygons) as 
 #' web services based on the Open Geospatial Consortium, 
-#' \href{http://www.opengeospatial.org/standards/wfs}{Web Feature Service (WFS)}
+#' \href{https://www.opengeospatial.org/standards/wfs}{Web Feature Service (WFS)}
 #' standardized interface. This requires the following libraries not by default
-#' installed with sbtools: \code{rgdal}, \code{httr}, and \code{xml2}. 
-#' You can install them simply by running \code{install.packages(c("xml2", "httr", "rgdal"))}
-#' 
-#' @examples 
-#' \dontrun{
-#' library(sp)
-#' layer = item_get_wfs('55e372b9e4b05561fa208212')
-#' 
-#' plot(layer)
-#' 
-#' }
+#' installed with sbtools: \code{sf}, \code{httr}, and \code{xml2}. 
+#' You can install them simply by running \code{install.packages(c("xml2", "httr", "sf"))}
 #' 
 #' @export
-item_get_wfs = function(sb_id, ..., session){
+#' 
+item_get_wfs = function(sb_id, as_sf = FALSE, ..., session){
 	
-	if(!requireNamespace("httr") || !requireNamespace("rgdal") || !requireNamespace("xml2")){
+	warning("item_get_wfs is going to be removed in a future version of sbtools")
+	
+	if(!requireNamespace("httr") || !requireNamespace("sf") || !requireNamespace("xml2")){
 		stop('
-httr, xml2, and rgdal packages not installed. 
+httr, xml2, and sf packages not installed. 
 Both are required to interact with WFS services. 
-Please run: install.packages(c(\'xml2\',\'httr\', \'rgdal\'))')
+Please run: install.packages(c(\'xml2\',\'httr\', \'sf\'))')
 	}
 	
 	wfs_url = item_get_wfs_url(sb_id)
@@ -45,20 +40,18 @@ Please run: install.packages(c(\'xml2\',\'httr\', \'rgdal\'))')
 		stop('SB Item WFS has > 1 layer. item_download_sp currently cannot handle more than one layer')
 	}
 	
-	fname = tempfile(fileext = '.shp')
-	
 	wfs_request = sub('request=GetCapabilities', 'request=GetFeature', wfs_url, ignore.case = TRUE)
-	wfs_request = paste0(wfs_request, '&outputformat=shape-zip&format_options=filename:shapedl.zip&typename=', layer_names)
-	fname = tempfile(fileext = '.zip')
-	dirname = file.path(tempdir(), basename(tempfile()))
+	wfs_request = paste0(wfs_request, '&outputformat=application/json&typename=', layer_names)
 	
-	httr::GET(wfs_request, httr::write_disk(fname))
+	dat <- httr::RETRY("GET", wfs_request, times = 3, pause_min = 10, pause_base = 10, pause_cap = 40)
 	
-	unzip(fname, exdir = dirname)
+	layer = sf::read_sf(rawToChar(dat$content))
 	
-	layer_sp = rgdal::readOGR(dirname, strsplit(layer_names, ':')[[1]][2])
-	return(layer_sp)
-	
+	if(!as_sf) {
+		sf::as_Spatial(layer)
+	} else {
+		layer
+	}
 }
 
 

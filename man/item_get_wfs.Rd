@@ -2,12 +2,14 @@
 % Please edit documentation in R/item_get_wfs.R
 \name{item_get_wfs}
 \alias{item_get_wfs}
-\title{Download and load from SB WFS service}
+\title{Download and load from SB WFS service (Deprecated)}
 \usage{
-item_get_wfs(sb_id, ..., session)
+item_get_wfs(sb_id, as_sf = FALSE, ..., session)
 }
 \arguments{
 \item{sb_id}{An \code{\link{sbitem}} object or a character ScienceBase ID corresponding to the item}
+
+\item{as_sf}{boolean, return data in sf format}
 
 \item{...}{Additional parameters are passed on to \code{\link[httr]{GET}}, \code{\link[httr]{POST}},
 \code{\link[httr]{HEAD}}, \code{\link[httr]{PUT}}, or \code{\link[httr]{DELETE}}}
@@ -19,19 +21,8 @@ last authenticated session}
 This function attempts to download the spatial layer data attached to the
 requested SB item. SB exposes discrete spatial objects (points, polygons) as 
 web services based on the Open Geospatial Consortium, 
-\href{http://www.opengeospatial.org/standards/wfs}{Web Feature Service (WFS)}
+\href{https://www.opengeospatial.org/standards/wfs}{Web Feature Service (WFS)}
 standardized interface. This requires the following libraries not by default
-installed with sbtools: \code{rgdal}, \code{httr}, and \code{xml2}. 
-You can install them simply by running \code{install.packages(c("xml2", "httr", "rgdal"))}
+installed with sbtools: \code{sf}, \code{httr}, and \code{xml2}. 
+You can install them simply by running \code{install.packages(c("xml2", "httr", "sf"))}
 }
-\examples{
-\dontrun{
-library(sp)
-layer = item_get_wfs('55e372b9e4b05561fa208212')
-
-plot(layer)
-
-}
-
-}
-

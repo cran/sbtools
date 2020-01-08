@@ -1,8 +1,10 @@
 Package: sbtools
 Title: USGS ScienceBase Tools
-Maintainer: Tim Kern <kernt@usgs.gov>
-Version: 1.1.6
-Authors@R: c(person("Tim", "Kern", role=c("cre"),
+Maintainer: David Blodgett <dblodgett@usgs.gov>
+Version: 1.1.9
+Authors@R: c(person("David", "Blodgett", role=c("cre"),
+    email = "dblodgett@usgs.gov"),
+    person("Tim", "Kern", role=c("aut"),
     email = "kernt@usgs.gov"),
     person("Luke", "Winslow", role = c("aut"),
     email = "lwinslow@usgs.gov"),
@@ -17,17 +19,19 @@ Description: Tools for interacting with U.S. Geological Survey ScienceBase
     collaborative data management platform. Functions included for querying
     ScienceBase, and creating and fetching datasets.
 Imports: jsonlite, curl, httr (>= 1.0.0), stringr, methods
-Suggests: testthat, xml2, rgdal, sp
+Suggests: testthat, xml2, sf, sp
 License: CC0
 URL: https://github.com/USGS-R/sbtools
 BugReports: https://github.com/USGS-R/sbtools/issues
-RoxygenNote: 5.0.1
+RoxygenNote: 6.1.1
+Encoding: UTF-8
 NeedsCompilation: no
-Packaged: 2016-09-27 15:52:47 UTC; lwinslow
-Author: Tim Kern [cre],
+Packaged: 2020-01-07 14:28:34 UTC; dblodgett
+Author: David Blodgett [cre],
+  Tim Kern [aut],
   Luke Winslow [aut],
   Scott Chamberlain [aut],
   Alison Appling [aut],
   Jordan Read [aut]
 Repository: CRAN
-Date/Publication: 2016-09-27 23:43:21
+Date/Publication: 2020-01-08 09:10:03 UTC
