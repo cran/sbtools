@@ -31,16 +31,10 @@ To install the `sbtools` package, you must be using R 3.0 or greater and run the
 install.packages("sbtools")
 ```
 
-To get inter-CRAN release updates, use the command:
-```r
-install.packages("sbtools",repos="https://owi.usgs.gov/R")
-```
-
 To get cutting-edge changes, install from GitHub using the `devtools` packages:
 
 ```r
-library(devtools)
-install_github("USGS-R/sbtools")
+remotes::install_github("USGS-R/sbtools")
 ```
 
 ## Reporting bugs
@@ -111,5 +105,5 @@ This software has been approved for release by the U.S. Geological Survey (USGS)
 
 From: https://www2.usgs.gov/fsp/fsp_disclaimers.asp#5
 
-This software is in the public domain because it contains materials that originally came from the U.S. Geological Survey, an agency of the United States Department of Interior. For more information, see the [official USGS copyright policy](https://www.usgs.gov/visual-id/credit_usgs.html#copyright/ "official USGS copyright policy")
+This software is in the public domain because it contains materials that originally came from the U.S. Geological Survey, an agency of the United States Department of Interior. For more information, see the [official USGS copyright policy](https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits "official USGS copyright policy")
 
