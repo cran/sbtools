@@ -1,3 +1,7 @@
+# Version 1.1.13 (2020-01-21)
+
+Version 1.1.10 to 1.1.13 are all minor changes for CRAN.
+
 # Version 1.1.9 (2020-01-07)
 
 * Fixed travis build and addressed CRAN test failures.
