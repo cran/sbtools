@@ -1,7 +1,7 @@
 Package: sbtools
 Title: USGS ScienceBase Tools
 Maintainer: David Blodgett <dblodgett@usgs.gov>
-Version: 1.1.13
+Version: 1.1.14
 Authors@R: c(person("David", "Blodgett", role=c("cre"),
     email = "dblodgett@usgs.gov"),
     person("Luke", "Winslow", role = c("aut"),
@@ -24,11 +24,11 @@ BugReports: https://github.com/USGS-R/sbtools/issues
 RoxygenNote: 7.1.1
 Encoding: UTF-8
 NeedsCompilation: no
-Packaged: 2021-01-21 20:10:16 UTC; dblodgett
+Packaged: 2021-02-15 19:57:07 UTC; dblodgett
 Author: David Blodgett [cre],
   Luke Winslow [aut],
   Scott Chamberlain [ctb],
   Alison Appling [ctb],
   Jordan Read [ctb]
 Repository: CRAN
-Date/Publication: 2021-01-22 05:40:02 UTC
+Date/Publication: 2021-02-16 06:20:02 UTC
