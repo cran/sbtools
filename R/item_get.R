@@ -35,6 +35,8 @@ get_item <- function(id, ..., session=current_session()) {
 	
 	if(is(res, "list")) {
 		if(res$status == 404) return(NULL)
+	} else if(is.null(res)) {
+		return(NULL)
 	}
 	
 	return(as.sbitem(content(res)))

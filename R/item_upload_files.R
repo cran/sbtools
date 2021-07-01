@@ -71,6 +71,8 @@ item_append_files = function(sb_id, files, ..., scrape_files = TRUE, session=cur
 	
 	item <- as.sbitem(sb_id)
 	
+	if(is.null(item)) return(NULL)
+	
 	params <- paste0("?id=", item$id)
 	
 	if(!scrape_files) {

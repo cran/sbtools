@@ -13,12 +13,13 @@
 #' description
 #' 
 #' @examples 
+#' \donttest{
 #' #query for a person's name
 #' query_sb_text('Luna Leopold')
 #' 
 #' #query for one of the old river gaging stations
 #' query_sb_text('Lees Ferry')
-#' 
+#' }
 #' 
 #' @export
 query_sb_text = function(text, ..., limit=20, session=current_session()){
