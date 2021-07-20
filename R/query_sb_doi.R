@@ -12,8 +12,7 @@
 #' Queries for ScienceBase items with a specific DOI identifier. 
 #' In ScienceBase, these are stored as additional unique identifiers.
 #' 
-#' @examples 
-#' \donttest{
+#' @examples \donttest{
 #' #Two example DOI-specific queries
 #' query_sb_doi('10.5066/F7M043G7')
 #' 

@@ -36,7 +36,6 @@ Queries ScienceBase based on a spatial bounding box. Accepts either an sp spatia
 (uses the spatial object's bounding box) or long/lat coordinates defining the bounding box limits.
 }
 \examples{
-
 \donttest{
 #specify the latitude and longitude points to define the bounding box range. 
 # This is simply bottom left and top right points

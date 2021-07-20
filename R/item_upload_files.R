@@ -56,8 +56,7 @@ item_upload_create = function(parent_id, files, ..., scrape_files = TRUE, sessio
 #'
 #' @import httr
 #'
-#' @examples 
-#' \dontrun{
+#' @examples \dontrun{
 #' res <- item_create(user_id(), "testing 123")
 #' cat("foo bar", file = "foobar.txt")
 #' item_append_files(res$id, "foobar.txt")

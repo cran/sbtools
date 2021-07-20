@@ -12,8 +12,7 @@
 #' Queries for ScienceBase items that have matching text in the title or 
 #' description
 #' 
-#' @examples 
-#' \donttest{
+#' @examples \donttest{
 #' #query for a person's name
 #' query_sb_text('Luna Leopold')
 #' 

@@ -10,8 +10,7 @@
 #' access is restricted due to permissions. 
 #' 
 #' 
-#' @examples 
-#' \donttest{
+#' @examples \donttest{
 #' # Get an item
 #' item_get("4f4e4b24e4b07f02db6aea14")
 #' 
