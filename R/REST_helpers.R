@@ -11,7 +11,8 @@
 sbtools_POST <- function(url, body, ..., session){
 	
 	supported_types <- c('text/plain', 'application/json')
-	check_session(session)
+	if(!check_session(session))
+		return(NULL)
 	
 	r = POST(url=url, ..., httrUserAgent(), accept_json(), body=body, handle=session, 
 					 timeout = httr::timeout(default_timeout())) 
@@ -45,7 +46,7 @@ sbtools_GET <- function(url, ..., session = NULL) {
 			return(list(status = 404))
 		}
 		
-		if(!is.null(session) && !inherits(session, "curl_handle")) stop("Session is not valid.")
+		if(!is.null(session) && !(inherits(session, "curl_handle") | inherits(session, "handle"))) stop("Session is not valid.")
 		
 		warning(paste("Error when calling ScienceBase,", 
 																		"internet or server down? Original", 
@@ -71,7 +72,10 @@ sbtools_GET <- function(url, ..., session = NULL) {
 #' @export
 #' @keywords internal
 sbtools_PUT <- function(url, body, ..., session) {
-	check_session(session)
+	
+	if(!check_session(session))
+		return(NULL)
+	
 	r <- PUT(url = url, ..., httrUserAgent(), body = body, handle = session, timeout = httr::timeout(default_timeout()))
 	r <- handle_errors(r, url, "PUT", NULL)
 	session_age_reset()
@@ -91,7 +95,9 @@ sbtools_PUT <- function(url, body, ..., session) {
 #' @export
 #' @keywords internal
 sbtools_DELETE <- function(url, ..., session) {
-	check_session(session)
+	
+	if(!check_session(session))
+		return(NULL)
 	
 	uid <- tryCatch(user_id(session = session), 
 									error = function(e) "0")
@@ -144,10 +150,16 @@ handle_errors <- function(x, url, method, types) {
 	
 	if ('errors' %in% names(content(x))) {
 		
-		if(length(errors <- content(x)$errors) == 1) {
-			message(errors$message, call. = FALSE)
-		} else {
+		errors <- as.character(content(x)$errors)
+		
+		if("mesage" %in% names(errors)) {
+		
 			message(paste(sapply(errors, function (x) x$message), collapse = "\n"), call. = FALSE)
+
+		} else {
+			
+			message(paste(errors, collapse = "\n"), call. = FALSE)
+			
 		}
 		
 		return(NULL)
