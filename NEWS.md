@@ -1,3 +1,10 @@
+# Version 0.2.0 (2023-04-28)
+
+- added `item_publish_cloud()` to push files to S3 public cloud storage. #302
+- update URLs for new repository. #303
+- improved handling of authentication and invalid logins
+- check error messages for firewall blocks
+
 # Version 1.1.21 (2022-11-03)
 
 - All web calls now use `httr::RETRY()` to be a bit more robust. #213
