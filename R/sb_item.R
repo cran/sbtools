@@ -8,7 +8,7 @@
 #' the method for character class inputs
 #' @examples \donttest{
 #' # Single item from item_get()
-#' item_get("4f4e4b24e4b07f02db6aea14")
+#' item_get("63cb38b2d34e06fef14f40ad")
 #' 
 #' # Get many w/ e.g., an lapply() call
 #' library("httr")
@@ -18,10 +18,10 @@
 #'   (out <- lapply(ids[1:3], item_get))
 #' }
 #' # create item class from only an item ID
-#' as.sbitem("4f4e4b24e4b07f02db6aea14")
+#' as.sbitem("63cb38b2d34e06fef14f40ad")
 #' 
 #' # sbitem gives back itself
-#' (x <- as.sbitem("4f4e4b24e4b07f02db6aea14"))
+#' (x <- as.sbitem("63cb38b2d34e06fef14f40ad"))
 #' as.sbitem(x)
 #' }
 

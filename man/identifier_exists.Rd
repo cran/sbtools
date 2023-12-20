@@ -4,16 +4,13 @@
 \alias{identifier_exists}
 \title{Check if identifier exists}
 \usage{
-identifier_exists(sb_id, ..., session = current_session())
+identifier_exists(sb_id, ...)
 }
 \arguments{
 \item{sb_id}{An \code{\link{sbitem}} object or a character ScienceBase ID corresponding to the item}
 
 \item{...}{Additional parameters are passed on to \code{\link[httr]{GET}}, \code{\link[httr]{POST}},
-\code{\link[httr]{HEAD}}, \code{\link[httr]{PUT}}, or \code{\link[httr]{DELETE}}}
-
-\item{session}{Session object from \code{\link{authenticate_sb}}. Defaults to anonymous or 
-last authenticated session}
+\code{\link[httr]{HEAD}}, \code{\link[httr]{PUT}}.}
 }
 \value{
 Logical, \code{TRUE} or \code{FALSE}
@@ -27,7 +24,7 @@ with an item that is unavailable due to permission restrictions.
 \examples{
 \donttest{
 # identifier exists
-identifier_exists(sb_id = "4f4e4b24e4b07f02db6aea14")
+identifier_exists(sb_id = "63cb38b2d34e06fef14f40ad")
 
 # identifier does not exist
 identifier_exists(sb_id = "aaaaaaakkkkkkkbbbbbb")

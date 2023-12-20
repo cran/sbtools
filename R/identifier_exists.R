@@ -12,17 +12,17 @@
 #' @return Logical, \code{TRUE} or \code{FALSE}
 #' @examples \donttest{
 #' # identifier exists
-#' identifier_exists(sb_id = "4f4e4b24e4b07f02db6aea14")
+#' identifier_exists(sb_id = "63cb38b2d34e06fef14f40ad")
 #' 
 #' # identifier does not exist
 #' identifier_exists(sb_id = "aaaaaaakkkkkkkbbbbbb")
 #' }
-identifier_exists <- function(sb_id, ..., session = current_session()) {
+identifier_exists <- function(sb_id, ...) {
 	#sb_id = as.sbitem(sb_id)
 	if(is(sb_id, 'sbitem')){
-		sbtools_HEAD(url = paste0(pkg.env$url_item, sb_id$id), ..., session = session)
+		sbtools_HEAD(url = paste0(pkg.env$url_item, sb_id$id), ...)
 	}else{
-		sbtools_HEAD(url = paste0(pkg.env$url_item, sb_id), ..., session = session)
+		sbtools_HEAD(url = paste0(pkg.env$url_item, sb_id), ...)
 	}
 }
 
