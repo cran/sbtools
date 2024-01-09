@@ -27,7 +27,7 @@
 #' @examples \dontrun{
 #' 
 #' #regular files
-#' item_list_files("63cb38b2d34e06fef14f40ad")
+#' item_list_files("4f4e4b24e4b07f02db6aea14")
 #' 
 #' # files in facets
 #' item_list_files("5f6a285d82ce38aaa244912e")

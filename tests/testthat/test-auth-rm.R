@@ -50,13 +50,13 @@ test_that("Test that surgical item rm", {
 	f <- file.path(tempdir(check = TRUE),
 								 "metadata6644450227216673613.xml")
 	cat("1234", file = f)
-	expect_warning(item_replace_files("63cb38b2d34e06fef14f40ad", 
+	expect_warning(item_replace_files("4f4e4b24e4b07f02db6aea14", 
 																		files = f),
 								 "item doesn't exist or is secured")
 	
 	assign("keycloak_expire", NULL, envir = sbtools:::pkg.env)
 	
-	expect_warning(item_replace_files("63cb38b2d34e06fef14f40ad", 
+	expect_warning(item_replace_files("4f4e4b24e4b07f02db6aea14", 
 																		files = f),
 								 "item doesn't exist or is secured")
 })

@@ -417,35 +417,28 @@ rendered with the author’s (<a href="mailto:dblodgett@usgs.gov" class="email">
 <p>The old way used <code>authenticate_sb()</code> with a username and
 password. The password could be cached using the <code>keyring</code>
 package.</p>
+<p>NOTE: This method no longer works and is shown here for reference
+with regard to old code and workflows.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">authenticate_sb</span>(<span class="fu">Sys.getenv</span>(<span class="st">&quot;sb_user&quot;</span>))</span>
-<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt; authenticate_sb will stop working in favor of initialize_sciencebase_session when sciencebase turns off username and password login</span></span>
-<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>my_home_item <span class="ot">&lt;-</span> <span class="fu">user_id</span>()</span>
-<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>new_item <span class="ot">&lt;-</span> <span class="fu">item_create</span>(<span class="at">title =</span> <span class="st">&#39;new test item&#39;</span>, <span class="at">parent_id =</span> my_home_item)</span>
-<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a>test.txt <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">tempdir</span>(), <span class="st">&#39;test.txt&#39;</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">c</span>(<span class="st">&#39;this is&#39;</span>,<span class="st">&#39;my data file&#39;</span>), test.txt)</span>
-<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a></span>
-<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a><span class="fu">item_append_files</span>(new_item, test.txt)</span>
-<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="co">#&gt; &lt;ScienceBase Item&gt; </span></span>
-<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a><span class="co">#&gt;   Title: new test item</span></span>
-<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="co">#&gt;   Creator/LastUpdatedBy:     dblodgett@usgs.gov / dblodgett@usgs.gov</span></span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a><span class="co">#&gt;   Provenance (Created / Updated):  2023-12-19T16:44:36Z / 2023-12-19T16:44:37Z</span></span>
-<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="co">#&gt;   Children: FALSE</span></span>
-<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a><span class="co">#&gt;   Item ID: 6581c874d34e38c885a5d0ec</span></span>
-<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co">#&gt;   Parent ID: 4f7afec1e4b0b2f259355f30</span></span>
-<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a></span>
-<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a><span class="fu">item_list_files</span>(new_item)<span class="sc">$</span>fname</span>
-<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a><span class="co">#&gt; [1] &quot;test.txt&quot;</span></span>
-<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a></span>
-<span id="cb3-24"><a href="#cb3-24" tabindex="-1"></a><span class="fu">item_rm</span>(new_item)</span>
-<span id="cb3-25"><a href="#cb3-25" tabindex="-1"></a></span>
-<span id="cb3-26"><a href="#cb3-26" tabindex="-1"></a><span class="fu">unlink</span>(test.txt)</span>
-<span id="cb3-27"><a href="#cb3-27" tabindex="-1"></a></span>
-<span id="cb3-28"><a href="#cb3-28" tabindex="-1"></a><span class="co"># restart or clean session to reauthenticate differently</span></span>
-<span id="cb3-29"><a href="#cb3-29" tabindex="-1"></a>sbtools<span class="sc">:::</span><span class="fu">clean_session</span>()</span></code></pre></div>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a>my_home_item <span class="ot">&lt;-</span> <span class="fu">user_id</span>()</span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>new_item <span class="ot">&lt;-</span> <span class="fu">item_create</span>(<span class="at">title =</span> <span class="st">&#39;new test item&#39;</span>, <span class="at">parent_id =</span> my_home_item)</span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a>test.txt <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">tempdir</span>(), <span class="st">&#39;test.txt&#39;</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">c</span>(<span class="st">&#39;this is&#39;</span>,<span class="st">&#39;my data file&#39;</span>), test.txt)</span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="fu">item_append_files</span>(new_item, test.txt)</span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a><span class="fu">item_list_files</span>(new_item)<span class="sc">$</span>fname</span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a><span class="fu">item_rm</span>(new_item)</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="fu">unlink</span>(test.txt)</span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a></span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a><span class="co"># restart or clean session to reauthenticate differently</span></span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a>sbtools<span class="sc">:::</span><span class="fu">clean_session</span>()</span></code></pre></div>
 <p>The new way uses <code>initialize_sciencebase_session()</code> to
 open a browser window. Once logged in, you can get a token from the user
 drop down in the upper right. For this example, that token has been
@@ -455,31 +448,30 @@ not be requested again.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>user <span class="ot">&lt;-</span> <span class="fu">Sys.getenv</span>(<span class="st">&quot;sb_user&quot;</span>) <span class="co"># this should be your science base user id</span></span>
 <span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a></span>
 <span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="fu">initialize_sciencebase_session</span>(user)</span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a><span class="co">#&gt; [1] TRUE</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>my_home_item <span class="ot">&lt;-</span> <span class="fu">user_id</span>()</span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>new_item <span class="ot">&lt;-</span> <span class="fu">item_create</span>(<span class="at">title =</span> <span class="st">&#39;new test item&#39;</span>, <span class="at">parent_id =</span> my_home_item)</span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a></span>
-<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a>test.txt <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">tempdir</span>(), <span class="st">&#39;test.txt&#39;</span>)</span>
-<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a></span>
-<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">c</span>(<span class="st">&#39;this is&#39;</span>,<span class="st">&#39;my data file&#39;</span>), test.txt)</span>
-<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a></span>
-<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="fu">item_append_files</span>(new_item, test.txt)</span>
-<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt; &lt;ScienceBase Item&gt; </span></span>
-<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt;   Title: new test item</span></span>
-<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt;   Creator/LastUpdatedBy:     dblodgett@usgs.gov / dblodgett@usgs.gov</span></span>
-<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co">#&gt;   Provenance (Created / Updated):  2023-12-19T16:44:45Z / 2023-12-19T16:44:45Z</span></span>
-<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="co">#&gt;   Children: FALSE</span></span>
-<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="co">#&gt;   Item ID: 6581c87dd34e38c885a5d0f1</span></span>
-<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a><span class="co">#&gt;   Parent ID: 4f7afec1e4b0b2f259355f30</span></span>
-<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a></span>
-<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="fu">item_list_files</span>(new_item)<span class="sc">$</span>fname</span>
-<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a><span class="co">#&gt; [1] &quot;test.txt&quot;</span></span>
-<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a></span>
-<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a><span class="fu">item_rm</span>(new_item)</span>
-<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a></span>
-<span id="cb4-28"><a href="#cb4-28" tabindex="-1"></a><span class="fu">unlink</span>(test.txt)</span></code></pre></div>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>my_home_item <span class="ot">&lt;-</span> <span class="fu">user_id</span>()</span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>new_item <span class="ot">&lt;-</span> <span class="fu">item_create</span>(<span class="at">title =</span> <span class="st">&#39;new test item&#39;</span>, <span class="at">parent_id =</span> my_home_item)</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>test.txt <span class="ot">&lt;-</span> <span class="fu">file.path</span>(<span class="fu">tempdir</span>(), <span class="st">&#39;test.txt&#39;</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" tabindex="-1"></a></span>
+<span id="cb4-11"><a href="#cb4-11" tabindex="-1"></a><span class="fu">writeLines</span>(<span class="fu">c</span>(<span class="st">&#39;this is&#39;</span>,<span class="st">&#39;my data file&#39;</span>), test.txt)</span>
+<span id="cb4-12"><a href="#cb4-12" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" tabindex="-1"></a><span class="fu">item_append_files</span>(new_item, test.txt)</span>
+<span id="cb4-14"><a href="#cb4-14" tabindex="-1"></a><span class="co">#&gt; &lt;ScienceBase Item&gt; </span></span>
+<span id="cb4-15"><a href="#cb4-15" tabindex="-1"></a><span class="co">#&gt;   Title: new test item</span></span>
+<span id="cb4-16"><a href="#cb4-16" tabindex="-1"></a><span class="co">#&gt;   Creator/LastUpdatedBy:     dblodgett@usgs.gov / dblodgett@usgs.gov</span></span>
+<span id="cb4-17"><a href="#cb4-17" tabindex="-1"></a><span class="co">#&gt;   Provenance (Created / Updated):  2024-01-09T01:35:41Z / 2024-01-09T01:35:43Z</span></span>
+<span id="cb4-18"><a href="#cb4-18" tabindex="-1"></a><span class="co">#&gt;   Children: FALSE</span></span>
+<span id="cb4-19"><a href="#cb4-19" tabindex="-1"></a><span class="co">#&gt;   Item ID: 659ca2edd34e3265ab162aa0</span></span>
+<span id="cb4-20"><a href="#cb4-20" tabindex="-1"></a><span class="co">#&gt;   Parent ID: 4f7afec1e4b0b2f259355f30</span></span>
+<span id="cb4-21"><a href="#cb4-21" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" tabindex="-1"></a><span class="fu">item_list_files</span>(new_item)<span class="sc">$</span>fname</span>
+<span id="cb4-23"><a href="#cb4-23" tabindex="-1"></a><span class="co">#&gt; [1] &quot;test.txt&quot;</span></span>
+<span id="cb4-24"><a href="#cb4-24" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" tabindex="-1"></a><span class="fu">item_rm</span>(new_item)</span>
+<span id="cb4-26"><a href="#cb4-26" tabindex="-1"></a></span>
+<span id="cb4-27"><a href="#cb4-27" tabindex="-1"></a><span class="fu">unlink</span>(test.txt)</span></code></pre></div>
 
 
 

@@ -26,7 +26,7 @@ ScienceBase item class
 \examples{
 \donttest{
 # Single item from item_get()
-item_get("63cb38b2d34e06fef14f40ad")
+item_get("4f4e4b24e4b07f02db6aea14")
 
 # Get many w/ e.g., an lapply() call
 library("httr")
@@ -36,10 +36,10 @@ if(res$status != 404) {
   (out <- lapply(ids[1:3], item_get))
 }
 # create item class from only an item ID
-as.sbitem("63cb38b2d34e06fef14f40ad")
+as.sbitem("4f4e4b24e4b07f02db6aea14")
 
 # sbitem gives back itself
-(x <- as.sbitem("63cb38b2d34e06fef14f40ad"))
+(x <- as.sbitem("4f4e4b24e4b07f02db6aea14"))
 as.sbitem(x)
 }
 }

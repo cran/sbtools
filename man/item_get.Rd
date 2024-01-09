@@ -23,7 +23,7 @@ access is restricted due to permissions.
 \examples{
 \donttest{
 # Get an item
-item_get("63cb38b2d34e06fef14f40ad")
+item_get("4f4e4b24e4b07f02db6aea14")
 
 # Search for item IDs, then pass to item_get
 library("httr")
