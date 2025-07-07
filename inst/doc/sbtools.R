@@ -40,29 +40,29 @@ class(unclass(item))
 
 
 ## ----eval=FALSE---------------------------------------------------------------
-#  authenticate_sb(Sys.getenv("sb_user"))
-#  
-#  my_home_item <- user_id()
-#  
-#  new_item <- item_create(title = 'new test item', parent_id = my_home_item)
-#  
-#  test.txt <- file.path(tempdir(), 'test.txt')
-#  
-#  writeLines(c('this is','my data file'), test.txt)
-#  
-#  item_append_files(new_item, test.txt)
-#  
-#  item_list_files(new_item)$fname
-#  
-#  item_rm(new_item)
-#  
-#  unlink(test.txt)
-#  
-#  # restart or clean session to reauthenticate differently
-#  sbtools:::clean_session()
+# authenticate_sb(Sys.getenv("sb_user"))
+# 
+# my_home_item <- user_id()
+# 
+# new_item <- item_create(title = 'new test item', parent_id = my_home_item)
+# 
+# test.txt <- file.path(tempdir(), 'test.txt')
+# 
+# writeLines(c('this is','my data file'), test.txt)
+# 
+# item_append_files(new_item, test.txt)
+# 
+# item_list_files(new_item)$fname
+# 
+# item_rm(new_item)
+# 
+# unlink(test.txt)
+# 
+# # restart or clean session to reauthenticate differently
+# sbtools:::clean_session()
 
 ## -----------------------------------------------------------------------------
-user <- Sys.getenv("sb_user") # this should be your science base user id
+user <- get_username()
 
 initialize_sciencebase_session(user)
 

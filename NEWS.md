@@ -1,3 +1,12 @@
+# version 1.4.0
+
+- removed `items_create()`, `items_upsert()`, and `items_update()` as they are no longer supported by sciencebase.
+- Fixed bugs related to sciencebase updates.
+- added `get_username()` as exported function.
+- added `get_cached_token()` as exported function.
+- added `token_stache_path()` as exported function.
+- fixed bug related to file downloads #332 and #335
+
 # version 1.3.2
 
 - `item_rm_files()` now uses cloud end point. #315
