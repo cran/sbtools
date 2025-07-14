@@ -1,11 +1,11 @@
-ef92f8d982d90829a2a23ad68d56e653 *DESCRIPTION
+68616f5d0ff80cc37f5f0febc98eb5ed *DESCRIPTION
 45394108c5e1c2ee9914baa1d9ca9eff *NAMESPACE
-dccd6f7b536fd8d1246b46482ce809cf *NEWS.md
+0dcb9a92c6a9456c84065835e6244e54 *NEWS.md
 5fb5de4b00b327f3218cbdf31433c2b8 *R/AAA.R
 23ca66fb0f7dc42094a793d1965230f3 *R/REST_helpers.R
 3576f52c7bc6fe74f4df457c17916cc5 *R/authenticate_sb.R
 984860ec8d9875854cb8b428606b497e *R/current_session.R
-00ebe385edafdc1f5ffbd90662ad043b *R/gql_helpers.R
+843647bfd30672a4820be21bb2a233d7 *R/gql_helpers.R
 6e23196da2332f22cf9270c869586f87 *R/identifier_exists.R
 c5a322e4359497a719adf513b5bf2411 *R/item_create.R
 31710c56aede7eff56f4e4d7f6d21492 *R/item_file_download.R
@@ -14,9 +14,9 @@ d6177dd83a781d91c4599cbee603b556 *R/item_list_children.R
 2eb087778f7e0d32a7632118c934f720 *R/item_list_files.R
 db48710fd308343a675082a5324fae77 *R/item_move.R
 9b4f84837eb15152acf14cf722d35a1b *R/item_rename_files.R
-c24a63f905fedb2d71a7f64e5ce7ae9a *R/item_replace_files.R
-4b2ea31295802525494a7f221bdc6ac1 *R/item_rm.R
-a1752a004d0154ea728a6213d0200618 *R/item_rm_files.R
+45783172bbc894c2d3699c3d3e36e820 *R/item_replace_files.R
+0df89c1bf118e964f70abce9ddeb10d9 *R/item_rm.R
+d0cd8da05aad62a38f9d6cc6aa8655db *R/item_rm_files.R
 21f7eedf56c32f09e998b79e552a893c *R/item_update.R
 7f7e0568fee1f9ec17a57a9aa87cd626 *R/item_update_identifier.R
 c1b3dbda3fe87f645d52da102cef49e7 *R/item_upload_files.R
@@ -30,7 +30,7 @@ eabe39f93f82c70c6d64c9c448eecad7 *README.md
 850a51641970e01fcafc73529970ea37 *inst/CITATION
 312e8271245279d079375379bd14be6c *inst/doc/sbtools.R
 02093e13ac945a8493eecdff6df459fd *inst/doc/sbtools.Rmd
-b32bdcbd8bdb28967925dba1246a7abc *inst/doc/sbtools.html
+e27caa814025417eee23030de61ee5da *inst/doc/sbtools.html
 b2c72a069b9c55a21c7e4a512cb52c32 *inst/examples/books.json
 720ff36876b6d979a271437f7c41eaff *inst/examples/data.csv
 e9d1b857b2c2f880fe1dd215056928bb *inst/examples/species.json
@@ -60,7 +60,7 @@ dc4fddc1c2634db5da879ff7d7fcbaa7 *man/item_rename_files.Rd
 76db1d3902ec3c259a5e69ea464e2d2f *man/item_replace_files.Rd
 23d2b03efcbd2f789a8838910a0085c5 *man/item_rm.Rd
 fb208131cec629804ef573da76dbb284 *man/item_rm_files.Rd
-5e6de19907bcd4714e259acee1a3339d *man/item_rm_recursive.Rd
+069b8d50530f4bb5de2cc4bcb40ad4a8 *man/item_rm_recursive.Rd
 d902770cff3c77436617df36972eec6e *man/item_update.Rd
 9b524487b130f052c9e5bf37a2027c63 *man/item_update_identifier.Rd
 131512ebb9d782912d92926d603c7811 *man/item_upload_cloud.Rd

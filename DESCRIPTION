@@ -1,7 +1,7 @@
 Package: sbtools
 Title: USGS ScienceBase Tools
 Maintainer: David Blodgett <dblodgett@usgs.gov>
-Version: 1.4.0
+Version: 1.4.1
 Authors@R: c(person("David", "Blodgett", role=c("cre"),
     email = "dblodgett@usgs.gov"),
     person("Luke", "Winslow", role = c("aut"),
@@ -29,11 +29,11 @@ Config/testthat/parallel: false
 Config/testthat/edition: 3
 Encoding: UTF-8
 NeedsCompilation: no
-Packaged: 2025-07-07 18:24:49 UTC; dblodgett
+Packaged: 2025-07-11 18:21:14 UTC; dblodgett
 Author: David Blodgett [cre],
   Luke Winslow [aut],
   Scott Chamberlain [ctb],
   Alison Appling [ctb],
   Jordan Read [ctb]
 Repository: CRAN
-Date/Publication: 2025-07-07 18:50:02 UTC
+Date/Publication: 2025-07-14 13:40:02 UTC
